@@ -1,5 +1,5 @@
-import { prisma } from "../../config/db"
-import { Prisma, User } from "@prisma/client"
+import { prisma } from "../../config/prisma"
+import { Prisma, User } from "../../../generated/prisma/client"
 
 const loginWithEmailAndPassword = async ({ email, password }: { email: string, password: string }) => {
     const user = await prisma.user.findUnique({
